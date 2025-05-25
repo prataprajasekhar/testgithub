@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timesheet Application</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app"> <!-- Main app container -->
+        <h1>Timesheet Application</h1>
+
+        <div id="loginSection">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" id="loginButton">Login</button>
+            </form>
+            <div id="message"></div>
+        </div>
+
+        <div id="loggedInSection" style="display: none;">
+            <p id="welcomeMessage"></p>
+            <button id="logoutButton">Logout</button>
+            
+            <div id="roleSpecificControls" style="margin-top: 15px; margin-bottom: 15px; text-align: center;">
+                <button id="viewPendingApprovalsButton" style="display: none;" class="role-button">View Pending Approvals</button>
+                <button id="userManagementButton" style="display: none;" class="role-button">User Management</button>
+                <!-- Add more as needed -->
+            </div>
+            <hr>
+            
+            <div id="createTimesheetFormSection" style="display: none;">
+                <h3>Create New Timesheet</h3>
+                <form id="createTimesheetForm">
+                    <div>
+                        <label for="timesheetDate">Date:</label>
+                        <input type="date" id="timesheetDate" required>
+                    </div>
+                    <div>
+                        <label for="timesheetHours">Hours Worked:</label>
+                        <input type="number" id="timesheetHours" step="0.1" min="0.1" required>
+                    </div>
+                    <div>
+                        <label for="timesheetDescription">Description:</label>
+                        <input type="text" id="timesheetDescription">
+                    </div>
+                    <button type="submit">Save Timesheet</button>
+                    <button type="button" id="cancelCreateTimesheet">Cancel</button>
+                </form>
+                <div id="createTimesheetMessage"></div>
+            </div>
+
+            <div id="contentArea">
+                <!-- Timesheets list will be loaded here -->
+                <p>Content area placeholder.</p>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
